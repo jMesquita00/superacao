@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Corrida Superação — Inscreva-se</title>
+
+    <meta
+      name="description"
+      content="Página oficial de inscrição da Corrida Superação. Venha correr, superar seus limites e celebrar cada conquista."
+    />
+
+    <style>
+      :root {
+        --primary: #9dc80a;
+        --primary-dark: #67772e;
+        --background: #031006;
+        --background-2: #1f1e0e;
+        --gold: #b47a1c;
+        --white: #ebeae6;
+        --cream: #eedba9;
+        --muted: #a19c7e;
+
+        --radius: 28px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--background);
+        color: var(--white);
+        line-height: 1.5;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .page {
+        overflow: hidden;
+      }
+
+      /* =========================
+       HEADER
+    ========================= */
+
+      header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 24px 6vw;
+
+        color: var(--white);
+      }
+
+      .logo {
+        font-weight: 900;
+        font-size: 1.35rem;
+        letter-spacing: -1px;
+        text-transform: uppercase;
+      }
+
+      .logo span {
+        color: var(--primary);
+      }
+
+      nav {
+        display: flex;
+        gap: 28px;
+
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      nav a {
+        opacity: 0.9;
+        transition: 0.2s;
+      }
+
+      nav a:hover {
+        color: var(--primary);
+      }
+
+      /* =========================
+       HERO
+    ========================= */
+
+      .hero {
+        min-height: 88vh;
+        position: relative;
+
+        display: flex;
+        align-items: center;
+
+        padding: 120px 7vw 80px;
+
+        color: var(--white);
+
+        background-image:
+          linear-gradient(
+            90deg,
+            rgba(3, 16, 6, 0.96) 0%,
+            rgba(3, 16, 6, 0.82) 40%,
+            rgba(3, 16, 6, 0.4) 70%,
+            rgba(3, 16, 6, 0.2) 100%
+          ),
+          url("./copia.jpeg");
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .hero::after {
+        content: "";
+
+        position: absolute;
+
+        right: -12vw;
+        bottom: -18vw;
+
+        width: 55vw;
+        height: 55vw;
+
+        border-radius: 50%;
+
+        border: 2px solid rgba(157, 200, 10, 0.15);
+
+        box-shadow:
+          0 0 0 40px rgba(157, 200, 10, 0.05),
+          0 0 0 80px rgba(157, 200, 10, 0.03);
+      }
+
+      .hero-content {
+        max-width: 720px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .eyebrow {
+        display: inline-block;
+
+        background: var(--primary);
+        color: var(--background);
+
+        padding: 8px 15px;
+
+        border-radius: 999px;
+
+        font-size: 0.75rem;
+        font-weight: 900;
+
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+
+        margin-bottom: 22px;
+      }
+
+      h1 {
+        font-size: clamp(3.5rem, 8vw, 7.6rem);
+
+        line-height: 0.84;
+
+        letter-spacing: -0.075em;
+
+        text-transform: uppercase;
+
+        margin-bottom: 28px;
+
+        color: var(--white);
+      }
+
+      h1 span {
+        color: var(--primary);
+      }
+
+      .hero p {
+        max-width: 590px;
+
+        font-size: 1.12rem;
+
+        color: var(--cream);
+
+        margin-bottom: 32px;
+      }
+
+      .cta {
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 12px;
+
+        padding: 17px 28px;
+
+        border-radius: 999px;
+
+        background: var(--primary);
+
+        color: var(--background);
+
+        font-weight: 900;
+
+        text-transform: uppercase;
+
+        letter-spacing: 0.04em;
+
+        transition:
+          0.2s transform,
+          0.2s background;
+      }
+
+      .cta:hover {
+        transform: translateY(-3px);
+
+        background: var(--primary-dark);
+
+        color: var(--white);
+      }
+
+      .meta {
+        display: flex;
+
+        gap: 35px;
+
+        margin-top: 42px;
+
+        flex-wrap: wrap;
+      }
+
+      .meta strong {
+        display: block;
+
+        font-size: 1.35rem;
+
+        color: var(--primary);
+      }
+
+      .meta small {
+        color: var(--cream);
+
+        text-transform: uppercase;
+
+        font-weight: 700;
+
+        font-size: 0.7rem;
+
+        letter-spacing: 0.1em;
+      }
+
+      /* =========================
+       SOBRE
+    ========================= */
+
+      .section {
+        padding: 90px 7vw;
+
+        background: linear-gradient(180deg, var(--background) 0%, #061a0b 100%);
+      }
+
+      .intro {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 70px;
+
+        align-items: center;
+      }
+
+      .kicker {
+        color: var(--primary);
+
+        font-size: 0.75rem;
+
+        font-weight: 900;
+
+        letter-spacing: 0.15em;
+
+        text-transform: uppercase;
+
+        margin-bottom: 14px;
+      }
+
+      h2 {
+        font-size: clamp(2.4rem, 5vw, 4.7rem);
+
+        line-height: 0.92;
+
+        letter-spacing: -0.055em;
+
+        text-transform: uppercase;
+
+        color: var(--white);
+      }
+
+      .intro p {
+        color: var(--cream);
+
+        font-size: 1.05rem;
+
+        margin-top: 22px;
+
+        max-width: 540px;
+      }
+
+      /* =========================
+       CARDS
+    ========================= */
+
+      .cards {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 18px;
+
+        margin-top: 42px;
+      }
+
+      .card {
+        background: linear-gradient(145deg, #0b2510, var(--background));
+
+        border-radius: var(--radius);
+
+        padding: 30px;
+
+        min-height: 220px;
+
+        border: 1px solid rgba(157, 200, 10, 0.18);
+
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+
+        transition:
+          0.25s transform,
+          0.25s border;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+
+        border-color: var(--primary);
+      }
+
+      .number {
+        font-size: 2.8rem;
+
+        font-weight: 900;
+
+        color: var(--primary);
+
+        line-height: 1;
+      }
+
+      .card h3 {
+        margin: 22px 0 8px;
+
+        font-size: 1.2rem;
+
+        color: var(--white);
+      }
+
+      .card p {
+        color: var(--cream);
+
+        font-size: 0.92rem;
+      }
+
+      /* =========================
+       INSCRIÇÃO
+    ========================= */
+
+      .register {
+        background: linear-gradient(
+          135deg,
+          var(--background-2),
+          var(--background)
+        );
+
+        color: var(--white);
+
+        border-radius: 40px;
+
+        margin: 0 4vw;
+
+        padding: 75px 7vw;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 35px;
+
+        border: 1px solid rgba(157, 200, 10, 0.2);
+
+        position: relative;
+
+        overflow: hidden;
+      }
+
+      .register::before {
+        content: "";
+
+        position: absolute;
+
+        width: 350px;
+        height: 350px;
+
+        right: -120px;
+        top: -160px;
+
+        border-radius: 50%;
+
+        background: var(--primary);
+
+        opacity: 0.06;
+      }
+
+      .register > * {
+        position: relative;
+        z-index: 2;
+      }
+
+      .register p {
+        color: var(--cream);
+
+        max-width: 570px;
+
+        margin-top: 16px;
+      }
+
+      .price {
+        font-size: 2.5rem;
+
+        font-weight: 900;
+
+        white-space: nowrap;
+
+        color: var(--primary);
+      }
+
+      /* =========================
+       FOOTER
+    ========================= */
+
+      footer {
+        padding: 50px 7vw;
+
+        display: flex;
+
+        justify-content: space-between;
+
+        gap: 25px;
+
+        color: var(--muted);
+
+        font-size: 0.85rem;
+
+        background: var(--background);
+      }
+
+      /* =========================
+       RESPONSIVIDADE
+    ========================= */
+
+      @media (max-width: 800px) {
+        nav {
+          display: none;
+        }
+
+        .hero {
+          min-height: 82vh;
+
+          padding-top: 130px;
+
+          background-position: 65% center;
+        }
+
+        .intro,
+        .cards {
+          grid-template-columns: 1fr;
+        }
+
+        .register {
+          margin: 0 18px;
+
+          flex-direction: column;
+
+          align-items: flex-start;
+        }
+
+        footer {
+          flex-direction: column;
+        }
+
+        h1 {
+          font-size: clamp(3.2rem, 17vw, 6rem);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <header>
+        <div class="logo">CORRIDA <span>SUPERAÇÃO</span></div>
+
+        <nav>
+          <a href="#sobre">Sobre</a>
+          <a href="#experiencia">Experiência</a>
+          <a href="#inscricao">Inscrição</a>
+        </nav>
+      </header>
+
+      <main>
+        <!-- HERO -->
+
+        <section class="hero">
+          <div class="hero-content">
+            <div class="eyebrow">Caxias — MA</div>
+
+            <h1>
+              Vem <span>correr</span><br />
+              com a gente!
+            </h1>
+
+            <p>
+              Uma experiência para quem ama movimento, desafio e boas histórias.
+              Prepare o tênis, chame a galera e venha fazer parte da Corrida
+              Superação.
+            </p>
+
+            <a
+              class="cta"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSc0FMWj5HbiG5ec10--Ad78B8L5S1-tHL7BG-2TDnP1NPeGvw/viewform"
+              target="_blank"
+              rel="noopener"
+            >
+              Inscreva-se agora →
+            </a>
+
+           
+
+            <div class="meta">
+              <div>
+                <strong>Data :20/09</strong>
+                <small>Domindo</small>
+              </div>
+
+              <div>
+                <strong>R$ 49,00</strong>
+                <small>Inscrição</small>
+              </div>
+
+              <div>
+                <strong>5 KM</strong>
+                <small>Percurso</small>
+              </div>
+
+              <div>
+                <strong>Local: Mirante </strong>
+              </div>
+              <div>
+                <strong> Concentração: 6:00h </strong>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SOBRE -->
+
+        <section class="section" id="sobre">
+          <div class="intro">
+            <div>
+              <div class="kicker">Mais que uma corrida</div>
+
+              <h2>Corra por você. Supere por todos.</h2>
+            </div>
+
+            <div>
+              <p>
+                Corra no seu ritmo, supere seus limites e aproveite cada
+                quilômetro. A Corrida Superação é uma experiência para quem
+                acredita que cada passo pode representar uma conquista.
+              </p>
+            </div>
+          </div>
+
+          <!-- CARDS -->
+
+          <div class="cards" id="experiencia">
+            <article class="card">
+              <div class="number">01</div>
+
+              <h3>Desafio</h3>
+
+              <p>
+                Um percurso para você sair da rotina e buscar sua melhor versão.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="number">02</div>
+
+              <h3>Energia</h3>
+
+              <p>Um encontro com movimento, diversão e muita disposição.</p>
+            </article>
+
+            <article class="card">
+              <div class="number">03</div>
+
+              <h3>Conquista</h3>
+
+              <p>
+                Chegue ao final com a sensação de que cada passo valeu a pena.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- INSCRIÇÃO -->
+
+        <section class="register" id="inscricao">
+          <div>
+            <div class="kicker">Garanta sua vaga</div>
+
+            <h2>Pronto para correr?</h2>
+
+            <p>
+              Clique no botão, preencha o formulário de inscrição e venha fazer
+              parte da Corrida Superação.
+            </p>
+          </div>
+
+          <div>
+            <div class="price">R$ 49,00</div>
+
+            <br />
+
+            <a
+              class="cta"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSc0FMWj5HbiG5ec10--Ad78B8L5S1-tHL7BG-2TDnP1NPeGvw/viewform"
+              target="_blank"
+              rel="noopener"
+            >
+              Quero me inscrever
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div>
+          <a class="cta" href="http://wa.me/559981575907">Fale conosco</a>
+        </div>
+
+        <div>© 2026 Corrida Superação. Todos os direitos reservados.</div>
+
+        <div>Caxias — Maranhão</div>
+      </footer>
+    </div>
+  </body>
+</html>
